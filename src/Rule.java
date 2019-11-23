@@ -10,7 +10,7 @@ public class Rule<T> {
 	public State next() {
 		return next;
 	}
-	public boolean is ApplicableTo(State state, T input) {
+	public boolean isApplicableTo(State state, T input) {
 		return this.state.equals(state) && this.input.equals(input);
 	}
 	@Override

@@ -1,5 +1,9 @@
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
 public class Test {
-	static enum TestState implement State {
+	static enum TestState implements State {
 		ONE,
 		TWO,
 		THREE {
@@ -14,21 +18,22 @@ public class Test {
 		     .setRule(new Rule<>(TestState.ONE, '1', TestState.ONE))
 		     .setRule(new Rule<>(TestState.ONE, '1', TestState.TWO))
 		     .setRule(new Rule<>(TestState.TWO, '0', TestState.THREE))
-		     .setRule(new Rule<>(TestState.TWo, '1', TestState.THREE));
-		final List<Character> input = Stream.of('1', '0')
-			                            .collect(Collectors.toList());
-		assertThat(nfa.isEnd(input), is(true));
+		     .setRule(new Rule<>(TestState.TWO, '1', TestState.THREE));
+		List<Character> input;
+		input = Stream.of('1', '0')
+				      .collect(Collectors.toList());
+		System.out.println(nfa.isEnd(input));
 		input = Stream.of('0', '0', '0', '1', '0')
-			      .collect(Collectors.toList());
-		assertThat(nfa.isEnd(input), is(true));
+			          .collect(Collectors.toList());
+		System.out.println(nfa.isEnd(input));
 		input = Stream.of('0', '1', '0', '1', '0', '1', '0', '1', '0', '1', '0')
-			      .collext(Collectors.toList());
-		assertThat(nfa.isEnd(input), is(true));
+			          .collect(Collectors.toList());
+		System.out.println(nfa.isEnd(input));
 		input = Stream.of('0', '1')
-	    		      .collext(Collectors.toList());
-		assertThat(nfa.isEnd(input), is(false));
+	    		      .collect(Collectors.toList());
+		System.out.println(nfa.isEnd(input));
 		input = Stream.of('1', '0', '0', '1')
-			      .collext(Collectors.toList());
-		assertThat(nfa.isEnd(input), is(false));
+				      .collect(Collectors.toList());
+		System.out.println(nfa.isEnd(input));
 	}
 }

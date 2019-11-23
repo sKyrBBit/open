@@ -1,3 +1,7 @@
+import java.util.HashSet;
+import java.util.Set;
+import java.util.stream.Collectors;
+
 public class RuleBook<T> {
 	Set<Rule<T>> rules = new HashSet<>();
 	public RuleBook setRule(Rule<T> rule) {

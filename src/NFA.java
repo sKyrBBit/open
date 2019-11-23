@@ -1,8 +1,12 @@
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 public class NFA<T> {
 	final private State state;
 	final private RuleBook<T> rules;
 	public NFA(State begin, RuleBook<T> rules) {
-		this.state = state;
+		this.state = begin;
 		this.rules = rules;
 	}
 	public boolean isEnd(List<T> inputs) {
