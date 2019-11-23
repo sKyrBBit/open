@@ -12,6 +12,7 @@ public class Test {
 		}
 	}
 	public static void main(String[] args) {
+		/*
 		final RuleBook<Character> rules = new RuleBook<>();
 		final NFA<Character> nfa = new NFA<>(TestState.ONE, rules);
 		rules.setRule(new Rule<>(TestState.ONE, '0', TestState.ONE))
@@ -35,5 +36,6 @@ public class Test {
 		input = Stream.of('1', '0', '0', '1')
 				      .collect(Collectors.toList());
 		System.out.println(nfa.isEnd(input));
+		*/
 	}
 }
