@@ -6,6 +6,9 @@ public class Symbol extends Token {
         super(Tag.SYMBOL);
         this.name = name;
     }
+    public String getName() {
+        return name;
+    }
     @Override
     public String toString() {
         return String.format("Symbol(%s)", name);

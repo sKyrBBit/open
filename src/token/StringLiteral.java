@@ -1,10 +1,15 @@
 package token;
 
-public class StringLiteral extends Token {
+import ast.Expression;
+
+public class StringLiteral extends Token implements Expression {
     private String value;
     public StringLiteral(String value) {
         super(Tag.STRING);
         this.value = value;
+    }
+    public String getValue() {
+        return value;
     }
     @Override
     public String toString() {

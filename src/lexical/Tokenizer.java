@@ -41,7 +41,7 @@ public class Tokenizer {
         },
         COMMENT
     }
-    public List<Token> tokenize(InputStreamReader reader) throws IOException {
+    public Token[] tokenize(InputStreamReader reader) throws IOException {
         final Vector<Token> tokens = new Vector<>();
         final RuleBook<Character> rules = new RuleBook<>();
         final DFA<Character> dfa = new DFA<>(LexicalState.WHITESPACE, rules);
@@ -178,6 +178,6 @@ public class Tokenizer {
             else { column++; }
             dfa.input((char) tmp);
         }
-        return tokens;
+        return tokens.toArray(new Token[0]);
     }
 }
