@@ -1,3 +1,4 @@
+/* DFA: Deterministic Finite Automaton */
 public class DFA<T> {
 	private State state;
 	final private RuleBook<T> rules;
