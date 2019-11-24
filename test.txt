@@ -1,1 +1,2 @@
-hoge 100 "piyo"
+int hoge = 1 + 2 * 3;
+String piyo = "Hello, World!";

@@ -1,3 +1,5 @@
+package lexical;
+
 public class Rule<T> {
 	final private State state;
 	final private T input;
@@ -15,7 +17,7 @@ public class Rule<T> {
 	}
 	@Override
 	public String toString() {
-		return String.format("( Rule: %s -- %s -> %s )", state, input, next);
+		return String.format("( lexical.Rule: %s -- %s -> %s )", state, input, next);
 	}
 }
 
