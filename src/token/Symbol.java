@@ -1,5 +1,6 @@
 package token;
 
+/* example: hoge, piyo */
 public class Symbol extends Token {
     private String name;
     public Symbol(String name) {

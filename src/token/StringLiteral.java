@@ -2,6 +2,7 @@ package token;
 
 import ast.Expression;
 
+/* example: "hoge" "piyo" */
 public class StringLiteral extends Token implements Expression {
     private String value;
     public StringLiteral(String value) {

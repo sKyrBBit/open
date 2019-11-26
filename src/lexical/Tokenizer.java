@@ -31,13 +31,13 @@ public class Tokenizer {
     static enum LexicalState implements State {
         WHITESPACE,
         SYMBOL {
-            @Override public String toString() {return "SYMBOL"; }
+            @Override public String toString() { return "SYMBOL"; }
         } ,
         NUMBER {
-            @Override public String toString() {return "NUMBER"; }
+            @Override public String toString() { return "NUMBER"; }
         },
         STRING{
-            @Override public String toString() {return "STRING"; }
+            @Override public String toString() { return "STRING"; }
         },
         COMMENT
     }
@@ -47,7 +47,7 @@ public class Tokenizer {
         final DFA<Character> dfa = new DFA<>(LexicalState.WHITESPACE, rules);
         final StringBuilder builder = new StringBuilder();
 
-        /* Rules */
+        /* rules */
         for (char c: whitespaces) {
             rules.setRule(new Rule<>(LexicalState.WHITESPACE, c, LexicalState.WHITESPACE));
             rules.setRule(new Rule<>(LexicalState.SYMBOL, c,LexicalState.WHITESPACE) {
@@ -170,7 +170,7 @@ public class Tokenizer {
         rules.setRule(new Rule<>(LexicalState.WHITESPACE, '#', LexicalState.COMMENT));
         rules.setRule(new Rule<>(LexicalState.COMMENT, '#', LexicalState.WHITESPACE));
 
-        /* Tokenize */
+        /* loop to tokenize */
         while (true) {
             int tmp = reader.read();
             if (tmp < 0) break;

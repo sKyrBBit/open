@@ -1,6 +1,6 @@
 package ast;
 
-public class Assignment {
+public class Assignment implements Node {
     String left;
     Expression right;
     public Assignment(String left, Expression right) {

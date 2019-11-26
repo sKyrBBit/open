@@ -2,6 +2,7 @@ package token;
 
 import ast.Expression;
 
+/* example: 100, -50 */
 public class NumberLiteral extends Token implements Expression {
     private int value;
     public NumberLiteral(String value) {
